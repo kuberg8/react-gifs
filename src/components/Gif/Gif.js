@@ -14,12 +14,12 @@ function Gif_item(props) {
 
 
 function Gif(props) {
-
+	
 	let gifElements = props.gifData.map( (f) => {
-		return (<Gif_item gif={f.images.downsized_large.url} />)
+		return (<Gif_item key={f.id} gif={f.images.downsized_large.url} />)
 	});
 
- debugger
+ 
 	return (
 		<div className={style.gifBlocks}>
 			{gifElements}
