@@ -1,0 +1,70 @@
+.gifBlocks {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-top: 80px;
+}
+
+.gifBlocks button {
+	position: absolute;
+	background: linear-gradient(rgb(255,212,3), rgb(248,157,23));
+	border-radius: 7px;
+	border: none;
+	outline: none;
+	right: 10px;
+	bottom: 10px;
+	width: 70px;
+	height: 40px;
+	font-size: 20px;
+	font-weight: bold;
+
+	animation: animatetop 0.4s;
+}
+
+@keyframes animatetop {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1; 
+	}
+}
+
+.gif_item {
+	width: 180px;
+	height: 180px;
+	margin: 0 2px 5px 2px;
+	overflow: hidden;
+}
+
+.gif_item img {
+	width: 100%;
+}
+
+
+@media (max-width: 1015px) {
+	.gifBlocks {
+		justify-content: center;
+	}
+}
+
+
+@media (max-width: 840px) {
+	.gifBlocks {
+		justify-content: center;
+	}
+}
+
+@media (max-width: 414px) {
+	.gif_item {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+@media (max-width: 320px) {
+	.gif_item {
+		width: 80px;
+		height: 80px;
+	}
+}
