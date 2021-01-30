@@ -1,21 +1,29 @@
-import {connect} from 'react-redux'
-import Header from './Header.js'
-import {setGifActionCreator, toggleIsRequestAC} from '../../redux/gif-reducer.js'
-
-
+import { connect } from "react-redux";
+import Header from "./Header.js";
+import {
+  setGifActionCreator,
+  changeSearchTextAC,
+  toggleIsFetchingAC,
+} from "../../redux/gif-reducer.js";
 
 let mapStateToProps = (state) => {
-	return {
-	}
-}
+  return {
+    searchText: state.gif.searchText,
+  };
+};
 
 let mapDispatchToProps = (dispatch) => {
-	return {
-		setGif: (gifData) => { dispatch( setGifActionCreator(gifData) ) },
-		toggleIsRequest: (isRequest) => { dispatch(toggleIsRequestAC(isRequest)) }
-	}
-}
+  return {
+    setGif: (gifData) => {
+      dispatch(setGifActionCreator(gifData));
+    },
+    setSearchText: (newSearchText) => {
+      dispatch(changeSearchTextAC(newSearchText));
+    },
+    setFetching: (isFetching) => {
+      dispatch(toggleIsFetchingAC(isFetching));
+    },
+  };
+};
 
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
